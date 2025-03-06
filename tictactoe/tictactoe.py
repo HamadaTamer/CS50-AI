@@ -54,7 +54,9 @@ def result(board, action):
     """
     Returns the board that results from making move (i, j) on the board.
     """
-
+    toPlay = player(board)
+    board[i][j] = toPlay
+    return board
     raise NotImplementedError
 
 
@@ -101,6 +103,13 @@ def utility(board):
     """
     Returns 1 if X has won the game, -1 if O has won, 0 otherwise.
     """
+    winner == winner(board)
+    if winner == X:
+        return 1
+    elif winner == O:
+        return -1
+    else:
+        return 0
     raise NotImplementedError
 
 
@@ -108,4 +117,6 @@ def minimax(board):
     """
     Returns the optimal action for the current player on the board.
     """
+
     raise NotImplementedError
+
