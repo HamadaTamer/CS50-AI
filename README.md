@@ -11,6 +11,8 @@ CS50 AI is an introduction to artificial intelligence, covering topics such as:
 - **Natural Language Processing** (e.g., sentiment analysis, Markov models)
 
 ## 📁 Projects Included
-| Project | Description |
-|---------|------------|
+| Project  | Description  |
+|----------|-------------|
+| **Degrees** | Implements a **graph search algorithm** (BFS) to find the shortest path between two actors in the **Kevin Bacon game**, using a dataset of movies and actors. |
+
 
