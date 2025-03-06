@@ -62,6 +62,15 @@ def winner(board):
     """
     Returns the winner of the game, if there is one.
     """
+    for i in range(0,3):
+        if board[i][0] == board[i][1] == board[i][2]:
+            return board[i][0]
+        if board[0][i] == board[1][i] == board[2][i]:
+            return board[0][i]
+    if board[0][0] == board[1][1] == board[2][2] or board[0][2] == board[1][1] == board[2][0]  :
+        return board[1][1]
+    else:
+        return None
     raise NotImplementedError
 
 
@@ -72,12 +81,18 @@ def terminal(board):
     have to check if there is a winner or if it is full
     """
     for i in range(0,3):
-        if board[i][0] == board[i][1] == board[i][2]:
-            return board[i][0]
-        if board[0][i] == board[1][i] == board[2][i]:
-            return board[0][i]
-    if board[0][0] == board[1][1] == board[2][2]:
-        return board[0][0]
+        #if there is a winner return true in terminal
+        if (board[i][0] == board[i][1] == board[i][2] is not None )or (board[0][i] == board[1][i] == board[2][i] is not None):
+            return True
+    if board[0][0] == board[1][1] == board[2][2] is not None or board[0][2] == board[1][1] == board[2][0] is not None :
+        return True
+    else:
+        #if there is no empty cell return true in terminal state
+        for list in board:
+            if None in list:
+                return False
+        return True
+            
     
     raise NotImplementedError
 
