@@ -160,8 +160,4 @@ def minimize(board):
         best_value = min(best_value,maximize(result(board, action)))
     return best_value 
             
-board3 = [[X, O, X],
-          [EMPTY, O, EMPTY],
-          [EMPTY, EMPTY, EMPTY]]
-
-print(minimax(board3))  
+ 
