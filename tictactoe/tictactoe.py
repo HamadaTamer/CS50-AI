@@ -40,12 +40,12 @@ def actions(board):
     """
     Returns set of all possible actions (i, j) available on the board.
     """
-    answer = []
+    answer = set()
     
     for i in range(0,3) :
         for j in range(0,3):
             if board[i][j] == None:
-                answer.append((i,j))
+                answer.add((i,j))
     return answer
     raise NotImplementedError
 
@@ -56,8 +56,11 @@ def result(board, action):
     """
     i,j = action
     new_board = [row[:] for row in board]  # Deep copy of board
-    new_board[i][j] = player(board)
-    return new_board
+    if (i > 2 or i<0 or j > 2 or j <0):
+        raise NotImplementedError
+    if new_board[i][j] is  EMPTY :
+        new_board[i][j] = player(board)
+        return new_board
     raise NotImplementedError
 
 
